@@ -21,22 +21,28 @@ const Projects = ({openModal,setOpenModal}) => {
             <ToggleButton value="all" onClick={() => setToggle('all')}>All</ToggleButton>
           }
           <Divider />
-          {toggle === 'automation - data scraping' ?
-            <ToggleButton active value="automation - data scraping" onClick={() => setToggle('automation - data scraping')}>AUTOMATION / DATA SCRAPING</ToggleButton>
+          {toggle === 'automation' ?
+            <ToggleButton active value="automation" onClick={() => setToggle('automation')}>AUTOMATION</ToggleButton>
             :
-            <ToggleButton value="automation - data scraping" onClick={() => setToggle('automation - data scraping')}>AUTOMATION / DATA SCRAPING</ToggleButton>
+            <ToggleButton value="automation" onClick={() => setToggle('automation')}>AUTOMATION</ToggleButton>
           }
           <Divider />
-          {toggle === 'automation - data scraping' ?
-            <ToggleButton active value="automation - data scraping" onClick={() => setToggle('machine learning - deep learning - computer vision')}>ML / DL / Computer Vision</ToggleButton>
+          {toggle === 'data scraping' ?
+            <ToggleButton active value="data scraping" onClick={() => setToggle('data scraping')}>DATA SCRAPING</ToggleButton>
             :
-            <ToggleButton value="automation - data scraping" onClick={() => setToggle('machine learning - deep learning - computer vision')}>ML / DL / Computer Vision</ToggleButton>
+            <ToggleButton value="data scraping" onClick={() => setToggle('data scraping')}>DATA SCRAPING</ToggleButton>
           }
           <Divider />
-          {toggle === 'python tools and scripts' ?
-            <ToggleButton active value="python tools and scripts" onClick={() => setToggle('python tools and scripts')}>PYTHON TOOLS / SCRIPTS</ToggleButton>
+          {toggle === 'artificial intelligence' ?
+            <ToggleButton active value="artificial intelligence" onClick={() => setToggle('artificial intelligence')}>AI</ToggleButton>
             :
-            <ToggleButton value="python tools and scripts" onClick={() => setToggle('python tools and scripts')}>PYTHON TOOLS / SCRIPTS</ToggleButton>
+            <ToggleButton value="artificial intelligence" onClick={() => setToggle('artificial intelligence')}>AI</ToggleButton>
+          }
+          <Divider />
+          {toggle === 'python tools & scripts' ?
+            <ToggleButton active value="python tools" onClick={() => setToggle('python tools')}>PYTHON TOOLS</ToggleButton>
+            :
+            <ToggleButton value="python tools" onClick={() => setToggle('python tools')}>PYTHON TOOLS</ToggleButton>
           }
         </ToggleButtonGroup>
         <CardContainer>
@@ -45,7 +51,7 @@ const Projects = ({openModal,setOpenModal}) => {
               <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
             ))}
           {projects
-            .filter((item) => item.category == toggle)
+            .filter((item) => item.categories.includes(toggle))
             .map((project) => (
               <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
             ))}
