@@ -31,6 +31,7 @@ max-width: 100%;
 -webkit-line-clamp: ${({ isExpanded }) => (isExpanded ? 'unset' : '4')};
 -webkit-box-orient: vertical;
 text-overflow: ellipsis;
+text-align: justify;
 `
 
 const Card = styled.div`
@@ -162,19 +163,24 @@ const ExperienceCard = ({ experience }) => {
 
     useEffect(() => {
         if (textRef.current) {
-            // Check if the content needs truncation
-            const checkHeight = () => {
-                const lineHeight = parseInt(window.getComputedStyle(textRef.current).lineHeight);
-                const height = textRef.current.scrollHeight;
-                const lines = height / (lineHeight || 24); // Default to 24px if lineHeight is not available
-                setShowButton(lines > 4);
+            // Simpler, more reliable method to check if text is truncated
+            const checkTruncation = () => {
+                // Reset to truncated state to measure properly
+                if (isExpanded) setIsExpanded(false);
+                
+                // A short delay to ensure styles are applied
+                setTimeout(() => {
+                    // If scrollHeight > clientHeight, text is truncated
+                    const isTruncated = textRef.current.scrollHeight > textRef.current.clientHeight;
+                    setShowButton(isTruncated);
+                }, 50);
             };
             
-            checkHeight();
-            window.addEventListener('resize', checkHeight);
+            checkTruncation();
+            window.addEventListener('resize', checkTruncation);
             
             return () => {
-                window.removeEventListener('resize', checkHeight);
+                window.removeEventListener('resize', checkTruncation);
             };
         }
     }, [experience?.desc]);
