@@ -1,12 +1,12 @@
 export const Bio = {
   name: "Hamza Khan",
   roles: [
-    "Python Dev",
-    "Data Scraping Specialist",
-    "Web Automation Expert",
-    "Machine Learning Engr",
-    "Deep RL Explorer",
-    "Telecom Engineer",
+    "Python Scripting",
+    "Data Scraping",
+    "Web Automation",
+    "APIs Integration",
+    "Machine Learning",
+    "Deep RL",
   ],
   description:
     "Final-year Telecommunication Engineering Student Skilled in Python, Javascript, Data Scraping, Web Automation, Machine learning, and Deep Reinforcement Learning, with hands-on experience through freelance projects and internships. Focused on building real-world AI solutions and automation tools to solve practical problems.",
