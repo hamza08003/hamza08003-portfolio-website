@@ -5,6 +5,7 @@ export const Bio = {
     "Data Scraping",
     "Web Automation",
     "APIs Integration",
+    "Data Analysis",
     "Machine Learning",
     "Deep RL",
   ],
@@ -400,7 +401,7 @@ export const projects = [
       "WebRTC",
       "Docker",
     ],
-    category: "machine learning - deep learning - computer vision",
+    categories: ["artificial intelligence", "automation"],
     github: "https://github.com/hamza08003/KYC-Verication-System_Python-Streamlit",
     member: [
       {
@@ -435,7 +436,7 @@ export const projects = [
       "Moviepy",
       "Multiprocessing",
     ],
-    category: "automation - data scraping",
+    categories: ["automation", "data scraping"],
     github: "https://github.com/hamza08003/IG-Automated-Actions-BOT",
     webapp: "https://podstream.netlify.app/",
   },
@@ -459,7 +460,7 @@ export const projects = [
       "Streamlit",
       "HTML/CSS",
     ],
-    category: "machine learning - deep learning - computer vision",
+    categories: ["artificial intelligence"],
     github: "https://github.com/hamza08003/realtime-fer",
     webapp: "https://vexa-app.netlify.app/",
   },
@@ -479,7 +480,7 @@ export const projects = [
       "Natural Language Processing", 
       "System Automation"
     ],
-    category: "python tools and scripts",
+    categories: ["python tools"],
     github: "https://github.com/hamza08003/Advanced-Voice-Assistant-Python",
   },
   {
@@ -502,7 +503,7 @@ export const projects = [
       "DeepFace",
       "Tensorflow",
     ],
-    category: "automation - data scraping",
+    categories: ["automation", "data scraping", "artificial intelligence"],
     github: "https://github.com/hamza08003/Deep-Link-Harvester",
   },
   {
@@ -521,7 +522,7 @@ export const projects = [
       "Numpy",
       "Threading",
     ],
-    category: "Python Tool",
+    categories: ["python tools"],
     github: "https://github.com/hamza08003/pyaudiowpatch-dual-audio-capture-and-transcription",
   },
 ];
