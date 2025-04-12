@@ -17,6 +17,8 @@ const HeroSection = () => {
                         <Title>Hi, I am <br /> {Bio.name}</Title>
                         <TextLoop>
                             I Specialize in
+                        </TextLoop>
+                        <TextLoop>
                             <Span>
                                 <Typewriter
                                     options={{
