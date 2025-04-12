@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 const Document = styled.img`
@@ -25,10 +25,10 @@ const Description = styled.div`
 `
 
 const Span = styled.span`
-overflow: hidden;
+overflow: ${({ isExpanded }) => (isExpanded ? 'visible' : 'hidden')};
 display: -webkit-box;
 max-width: 100%;
--webkit-line-clamp: 4;
+-webkit-line-clamp: ${({ isExpanded }) => (isExpanded ? 'unset' : '4')};
 -webkit-box-orient: vertical;
 text-overflow: ellipsis;
 `
@@ -57,12 +57,6 @@ const Card = styled.div`
 
     &:hover ${Document}{
         display: flex;
-    }
-
-    &:hover ${Span}{
-        overflow: visible;
-        -webkit-line-clamp: unset;
-
     }
 
     border: 0.1px solid #306EE8;
@@ -142,9 +136,53 @@ const Skill = styled.div`
     }
 `
 
-
+const ReadMoreButton = styled.button`
+    background: none;
+    border: none;
+    color: ${({ theme }) => theme.primary};
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    display: block;
+    &:hover {
+        text-decoration: underline;
+    }
+    @media only screen and (max-width: 768px){
+        font-size: 12px;
+    }
+`
 
 const ExperienceCard = ({ experience }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [showButton, setShowButton] = useState(false);
+    const textRef = useRef(null);
+
+    useEffect(() => {
+        if (textRef.current) {
+            // Check if the content needs truncation
+            const checkHeight = () => {
+                const lineHeight = parseInt(window.getComputedStyle(textRef.current).lineHeight);
+                const height = textRef.current.scrollHeight;
+                const lines = height / (lineHeight || 24); // Default to 24px if lineHeight is not available
+                setShowButton(lines > 4);
+            };
+            
+            checkHeight();
+            window.addEventListener('resize', checkHeight);
+            
+            return () => {
+                window.removeEventListener('resize', checkHeight);
+            };
+        }
+    }, [experience?.desc]);
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
+
     return (
         <Card>
             <Top>
@@ -157,8 +195,14 @@ const ExperienceCard = ({ experience }) => {
             </Top>
             <Description>
                 {experience?.desc &&
-                    <Span>{experience?.desc}</Span>
-
+                    <>
+                        <Span ref={textRef} isExpanded={isExpanded}>{experience?.desc}</Span>
+                        {showButton && (
+                            <ReadMoreButton onClick={toggleExpand}>
+                                {isExpanded ? 'Read Less' : 'Read More'}
+                            </ReadMoreButton>
+                        )}
+                    </>
                 }
                 {experience?.skills &&
                     <>
@@ -167,7 +211,7 @@ const ExperienceCard = ({ experience }) => {
                             <b>Skills:</b>
                             <ItemWrapper>
                                 {experience?.skills?.map((skill, index) => (
-                                    <Skill>• {skill}</Skill>
+                                    <Skill key={index}>• {skill}</Skill>
                                 ))}
                             </ItemWrapper>
                         </Skills>
