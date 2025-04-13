@@ -319,7 +319,7 @@ export const experiences = [
     role: "Python Scripting - Web Development",
     company: "Fiverr",
     date: "2022 - 2023",
-    desc: "I offered Python scripting, Small Scale Web Development, and coding lessons on Fiverr. My work included building small automation scripts and web apps (React/Flask). I also taught Python fundamentals to beginners, helping them grasp core programming concepts through practical projects.",
+    desc: "I offered Python scripting, Small Scale Web Development, and coding lessons on Fiverr. My work included building automation scripts and web apps (React/Flask). I also taught Python fundamentals to beginners, helping them grasp core programming concepts through practical projects.",
     skills: [
       "Selenium",
       "Scrapy",
