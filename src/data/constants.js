@@ -293,7 +293,7 @@ export const experiences = [
     role: "Web Automation, Social Media Bots, Data Scraping, Data Analysis - Generative AI",
     company: "Upwork",
     date: "2023 - Present",
-    desc: "Since 2023, I've specialized in Web Automation, Large-Scale Data Scraping, and Generative AI solutions on Upwork. My projects include building high quality performance scrapers (Selenium/Playwright), automating workflows, and developing AI tools using LangChain & Open Source LLMs. I also integrate and automate social media platforms (Instagram, Twitter/X, Discord, TikTok) via their APIs for tasks like content scheduling, analytics, and bot development. For cloud-based solutions, I leverage Google Cloud Platform (GCP) for deploying scalable scrapers, storing/processing datasets, and running AI models. Additionally, I analyze scraped data to extract business insights and train custom models for clients worldwide",
+    desc: "Since 2023, I've specialized in Web Automation, Large-Scale Data Scraping, and Generative AI solutions on Upwork. My projects include building high performance scrapers (Selenium/Playwright), automating workflows, and developing AI tools using LangChain & Open Source LLMs. I also integrate and automate social media platforms (Instagram, Twitter/X, Discord, TikTok) via their APIs for tasks like content scheduling, analytics, and bot development. For cloud-based solutions, I use Google Cloud Platform (GCP) service and APIs. Additionally, I analyze scraped data to extract business insights and train custom models.",
     skills: [
       "Selenium",
       "Scrapy",
