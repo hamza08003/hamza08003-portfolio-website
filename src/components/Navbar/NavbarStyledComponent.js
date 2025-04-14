@@ -1,5 +1,5 @@
 import { Link as LinkR } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import _default from '../../themes/default';
 
 export const Nav = styled.div`
@@ -123,6 +123,17 @@ export const MobileIcon = styled.div`
   }
 `
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+`;
+
 export const MobileMenu = styled.div`
     display: flex;
     flex-direction: column;
@@ -133,14 +144,33 @@ export const MobileMenu = styled.div`
     right: 0;
     width: 100%;
     padding: 12px 40px 24px 40px;
-    background: ${({ theme }) => theme.card_light+99};
-    transition: all 0.6s ease-in-out;
+    background: ${({ theme }) => theme.card_light};
+    transition: all 0.3s ease-in-out;
+    transform-origin: top;
     transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
     border-radius: 0 0 20px 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
     z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
+    animation: ${({ isOpen }) => (isOpen ? fadeIn : 'none')} 0.4s ease;
 
+    & > * {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
+        
+        ${({ isOpen }) => isOpen && `
+            opacity: 1;
+            transform: translateY(0);
+        `}
+
+        &:nth-child(1) { transition-delay: 0.1s; }
+        &:nth-child(2) { transition-delay: 0.15s; }
+        &:nth-child(3) { transition-delay: 0.2s; }
+        &:nth-child(4) { transition-delay: 0.25s; }
+        &:nth-child(5) { transition-delay: 0.3s; }
+        &:nth-child(6) { transition-delay: 0.35s; }
+    }
 `
 
 export const MobileMenuItems = styled.ul`
