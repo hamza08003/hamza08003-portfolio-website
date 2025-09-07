@@ -2,17 +2,17 @@ export const Bio = {
   name: "Hamza Khan",
   roles: [
     "Python Scripting",
-    "Data Scraping",
-    "Web Automation",
-    "APIs Integration",
+    "Backend Development",
+    "API Design & Integration",
+    "Web Scraping & Automation",
     "Data Analysis",
-    "Machine Learning",
-    "Deep RL",
-  ],
+    "AI/ML",
+    "Generative AI / Agentic AI",
+],
   description:
-    "Final-year Telecommunication Engineering Student Skilled in Python, Javascript, Data Scraping, Web Automation, Machine learning, and Deep Reinforcement Learning, with hands-on experience through freelance projects and internships. Focused on building real-world AI solutions and automation tools to solve practical problems.",
+    "A passionate Python developer skilled in in Backend Development, API Design / Integration, Data Scraping, Automation, and AI/ML (including Generative AI and Agentic AI) Gained hands-on experience through freelance projects and internships. Focused on building scalable backend systems, AI-powered applications, and automation tools to solve practical problems. Always looking to learn new technologies and grow in my career.",
   github: "https://github.com/hamza08003",
-  resume: "https://drive.google.com/file/d/1F69gymFqS9TnbUMnvO1ulkNAV1ZSk_ER/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1_h7eTHZimaZmzguX9p-AgwY0xODpWSJd/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/hamza2082003/",
   twitter: "https://twitter.com/hamza08003",
   insta: "https://www.instagram.com/hamza08003",
@@ -20,7 +20,7 @@ export const Bio = {
 
 export const skills = [
   {
-    title: "AI (ML & Deep RL)",
+    title: "AI (ML - Gen AI)",
     skills: [
       {
         name: "Python",
@@ -69,7 +69,7 @@ export const skills = [
     ],
   },
   {
-    title: "Web Automation & Data Scraping",
+    title: "Data Scraping & Web   Automation",
     skills: [
       {
         name: "JavaScript",
@@ -106,7 +106,7 @@ export const skills = [
     ],
   },
   {
-    title: "Backend (APIs Integration)",
+    title: "API Design / Integration",
     skills: [
       {
         name: "FastAPI",
@@ -206,10 +206,10 @@ export const skills = [
         "name": "Milvus",
         "image": "https://miro.medium.com/v2/resize:fit:2400/1*-VEGyAgcIBD62XtZWavy8w.png",
       },
-      {
-        "name": "Pinecone",
-        "image": "https://png.pngtree.com/png-vector/20240705/ourmid/pngtree-vector-colored-pine-cone-logo-illustration-png-image_7209756.png"
-      },
+      // {
+      //   "name": "Pinecone",
+      //   "image": "https://png.pngtree.com/png-vector/20240705/ourmid/pngtree-vector-colored-pine-cone-logo-illustration-png-image_7209756.png"
+      // },
     ],
   },
   {
